@@ -4,7 +4,7 @@
 
 ## [Demo](https://waterrmalann.github.io/tree/)   |   [Source](https://github.com/waterrmalann/tree/blob/main/index.js)
 
-A simple zero-deps, vanilla JS web app that generates an ASCII shareable tree diagram from an indentation-based input. Functioning similar to the [tree](https://en.wikipedia.org/wiki/Tree_(command)) command!
+A simple zero-deps, vanilla JS web app that generates an ASCII shareable tree diagram from an indentation-based input. Functioning similar to the [tree](https://en.wikipedia.org/wiki/Tree_(command)) command! I find this extremely useful when writing documentation or well-formatted AI prompts.
 
 **This little tool can take an input like:**
 
