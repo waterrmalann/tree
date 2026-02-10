@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tree</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="title">
+        <strong>Tree Generator 🌳</strong>
+        <span>Input format: indentation-based (tabs or 2+ spaces). One item per line.</span>
+      </div>
+
+      <div class="controls">
+        <span class="control">
+          Charset
+          <select id="charset">
+            <option value="utf-8" selected>utf-8</option>
+            <option value="ascii">ascii</option>
+          </select>
+        </span>
+
+        <label><input id="rootDot" type="checkbox" checked /> root dot</label>
+        <label><input id="trailingDirSlash" type="checkbox" /> trailing dir slash</label>
+        <label><input id="fullPath" type="checkbox" /> full path</label>
+
+        <button class="btn" id="copyBtn" type="button">Copy output</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="pane">
+        <header>
+          <div><strong>Input</strong></div>
+          <div class="muted">Tip: folders don’t need a trailing “/”. Nesting is inferred from indentation.</div>
+        </header>
+        <textarea id="input" spellcheck="false"></textarea>
+        <div id="inputError" class="error" style="display:none;"></div>
+      </section>
+
+      <section class="pane">
+        <header>
+          <div><strong>Output</strong></div>
+          <div class="muted">Generated tree updates as you type.</div>
+        </header>
+        <pre id="output"></pre>
+        <div id="outputError" class="error" style="display:none;"></div>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
