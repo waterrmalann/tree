@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="80" fill="#0b0f14"/>
+  <!-- Vertical trunk line -->
+  <line x1="120" y1="100" x2="120" y2="400" stroke="#4aa3ff" stroke-width="24" stroke-linecap="round"/>
+  <!-- Root node connector -->
+  <line x1="120" y1="140" x2="200" y2="140" stroke="#4aa3ff" stroke-width="24" stroke-linecap="round"/>
+  <!-- Child 1 connector -->
+  <line x1="120" y1="230" x2="200" y2="230" stroke="#4aa3ff" stroke-width="24" stroke-linecap="round"/>
+  <!-- Child 1 sub-child connector (vertical) -->
+  <line x1="240" y1="270" x2="240" y2="360" stroke="#4aa3ff" stroke-width="20" stroke-linecap="round"/>
+  <line x1="240" y1="280" x2="310" y2="280" stroke="#4aa3ff" stroke-width="20" stroke-linecap="round"/>
+  <line x1="240" y1="360" x2="310" y2="360" stroke="#4aa3ff" stroke-width="20" stroke-linecap="round"/>
+  <!-- Nodes (circles) -->
+  <circle cx="200" cy="140" r="22" fill="#4aa3ff"/>
+  <circle cx="200" cy="230" r="22" fill="#4aa3ff"/>
+  <circle cx="310" cy="280" r="18" fill="#9cc9ff"/>
+  <circle cx="310" cy="360" r="18" fill="#9cc9ff"/>
+  <circle cx="200" cy="400" r="22" fill="#4aa3ff"/>
+  <line x1="120" y1="400" x2="200" y2="400" stroke="#4aa3ff" stroke-width="24" stroke-linecap="round"/>
+</svg>
