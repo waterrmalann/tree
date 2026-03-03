@@ -221,6 +221,7 @@ const fullPathEl = $("fullPath");
 const rootDotEl = $("rootDot");
 const copyBtn = $("copyBtn");
 const STORAGE_KEY = "tree-input";
+let lastStoredInput = null;
 
 function getStoredInput() {
   try {
@@ -231,8 +232,10 @@ function getStoredInput() {
 }
 
 function storeInput(value) {
+  if (value === lastStoredInput) return;
   try {
     localStorage.setItem(STORAGE_KEY, value);
+    lastStoredInput = value;
   } catch {}
 }
 
@@ -324,6 +327,7 @@ copyBtn.addEventListener("click", async () => {
 
 // Seed example only when there is no stored input
 const storedInput = getStoredInput();
+lastStoredInput = storedInput;
 inputEl.value =
   storedInput !== null
     ? storedInput
