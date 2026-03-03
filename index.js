@@ -359,7 +359,7 @@ function outdentAtCursor() {
   const lineStart = value.lastIndexOf("\n", pos - 1) + 1;
   const before = value.slice(lineStart, pos);
 
-  const indentMatch = before.match(/^[\t ]+/);
+  const indentMatch = before.match(/^[\t ]+$/);
   if (!indentMatch) return false;
 
   const indent = indentMatch[0];
