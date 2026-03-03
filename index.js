@@ -220,6 +220,24 @@ const trailingDirSlashEl = $("trailingDirSlash");
 const fullPathEl = $("fullPath");
 const rootDotEl = $("rootDot");
 const copyBtn = $("copyBtn");
+const STORAGE_KEY = "tree-input";
+let lastStoredInput = null;
+
+function getStoredInput() {
+  try {
+    return localStorage.getItem(STORAGE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function storeInput(value) {
+  if (value === lastStoredInput) return;
+  try {
+    localStorage.setItem(STORAGE_KEY, value);
+    lastStoredInput = value;
+  } catch {}
+}
 
 function getOptionsFromUI() {
   return {
@@ -244,6 +262,7 @@ function render() {
   try {
     setError(inputErrorEl, null);
     setError(outputErrorEl, null);
+    storeInput(inputEl.value);
 
     const root = parseIndentedList(inputEl.value);
     const tree = generateTree(root, getOptionsFromUI());
@@ -306,17 +325,22 @@ copyBtn.addEventListener("click", async () => {
   }
 });
 
-// Seed example
-inputEl.value = [
-  "src",
-  "  index.js",
-  "  styles",
-  "    app.css",
-  "  components",
-  "    Button.js",
-  "    Card.js",
-  "README.md",
-].join("\n");
+// Seed example only when there is no stored input
+const storedInput = getStoredInput();
+lastStoredInput = storedInput;
+inputEl.value =
+  storedInput !== null
+    ? storedInput
+    : [
+        "src",
+        "  index.js",
+        "  styles",
+        "    app.css",
+        "  components",
+        "    Button.js",
+        "    Card.js",
+        "README.md",
+      ].join("\n");
 
 render();
 
